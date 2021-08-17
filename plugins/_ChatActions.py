@@ -1,3 +1,11 @@
+# Ultroid - UserBot
+# Copyright (C) 2021 TeamUltroid
+#
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
+# PLease read the GNU Affero General Public License in
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
+
+
 from pyUltroid.functions.all import get_chatbot_reply
 from pyUltroid.functions.chatBot_db import chatbot_stats
 from pyUltroid.functions.clean_db import *
@@ -136,7 +144,11 @@ async def ChatActionsHandler(ult):  # sourcery no-metrics
 
 @ultroid_bot.on(events.NewMessage(incoming=True))
 async def chatBot_replies(event):
-    if event.sender_id and chatbot_stats(event.chat_id, event.sender_id) and not event.media:
+    if (
+        event.sender_id
+        and chatbot_stats(event.chat_id, event.sender_id)
+        and not event.media
+    ):
         msg = get_chatbot_reply(event, event.text)
         if msg:
             await event.reply(msg)

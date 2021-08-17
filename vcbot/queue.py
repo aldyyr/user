@@ -5,10 +5,8 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
-from . import *
 
-
-@asst.on_message(
+"""@asst.on_message(
     filters.command(["clearqueue", f"clearqueue@{vcusername}"])
     & filters.user(VC_AUTHS())
     & ~filters.edited
@@ -49,3 +47,4 @@ async def queuee(_, e):
 @Client.on_message(filters.outgoing & filters.command("queue", HNDLR) & ~filters.edited)
 async def queue_vc(_, message):
     await queuee(_, message)
+"""

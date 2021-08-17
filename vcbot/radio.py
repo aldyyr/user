@@ -5,9 +5,8 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
-from . import *
 
-
+"""
 @asst.on_message(
     filters.command(["radio", f"radio@{vcusername}"])
     & filters.user(VC_AUTHS())
@@ -55,3 +54,4 @@ async def radio(client, message):
 @Client.on_message(filters.me & filters.command("radio", HNDLR) & ~filters.edited)
 async def rplay(_, message):
     await radio(_, message)
+"""

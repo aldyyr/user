@@ -5,10 +5,8 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
-from . import *
-from .play import queue_func
 
-
+"""
 def AUTH_FILTER(client, query):
     if query.from_user.id not in VC_AUTHS():
         query.answer("You are Not Authorised to Use Me!", show_alert=True)
@@ -38,7 +36,7 @@ async def stopvc(_, query):
 @asst.on_callback_query(filters.regex("^skip_(.*)") & AUTH_FILTER)
 async def skipstream(client, query):
     match = query.matches[0].group(1)
-    await query.answer("Skipped !", show_alert=True)
+    await query.answer("Skipped !", show_alert=False)
     await query.message.delete()
     await queue_func(int(match))
 
@@ -54,3 +52,4 @@ async def exit_vc(_, query):
     await query.answer("Exited !")
     await asyncio.sleep(1)
     await msg.delete()
+"""

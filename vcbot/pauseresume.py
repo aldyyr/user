@@ -5,12 +5,16 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
-
 from . import *
 
-HELP_TEXT = "**View All Vc Commands Here :**\nhttps://telegra.ph/Vc-Commands-07-17-2"
+
+@vc_asst("pause")
+async def aoah(e):
+    CallsClient.pause_playout()
+    await eor(e, "∆ Paused.")
 
 
-@vc_asst("vchelp")
-async def pass_it(message):
-    await eor(message, HELP_TEXT)
+@vc_asst("pause")
+async def aoah(e):
+    CallsClient.resume_playout()
+    await eor(e, "∆ Resumed.")
